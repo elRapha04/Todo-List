@@ -78,7 +78,7 @@ const TodoList = () => {
           onChange={handleInput}
         />
         <Button
-          className="bg-green-500/30 backdrop-blur-sm hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100"
+          className="bg-green-500/30 backdrop-blur-sm hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100 active:scale-95"
           onClick={addTask}
         >
           Add
