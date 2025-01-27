@@ -2,6 +2,9 @@ import React from "react";
 import { Button } from "./components/ui/button";
 import TodoContainer from "./components/ToDoContainer";
 import TodoItem from "./components/TodoItem";
+import { Popover } from "./components/ui/popover";
+import { AlertDialog } from "./components/ui/alert-dialog";
+import AddButton from "./components/AddButton";
 
 const App = () => {
   return (
@@ -11,15 +14,10 @@ const App = () => {
       <h1 className="font-serif font-bold text-white text-3xl">To-Do List</h1>
 
       <TodoContainer>
-        <TodoItem>
-        </TodoItem>
-          <Button
-            variant={"outline"}
-            className="group hover:bg-transparent hover:border-3 transition-all duration-500"
-          >
-            <p className="">+</p>
-            <p className="hidden group-hover:inline">New Note</p>
-          </Button>
+        <TodoItem></TodoItem>
+        
+
+        <AddButton></AddButton>
       </TodoContainer>
     </div>
   );
