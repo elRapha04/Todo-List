@@ -2,6 +2,7 @@ import React from "react";
 import TodoContainer from "./components/ToDoContainer";
 import TodoItem from "./components/TodoItem";
 import AddButton from "./components/AddButton";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   return (
@@ -11,10 +12,7 @@ const App = () => {
       <h1 className="font-serif font-bold text-white text-3xl">To-Do List</h1>
 
       <TodoContainer>
-        <TodoItem></TodoItem>
-        
-
-        <AddButton></AddButton>
+        <TodoList></TodoList>
       </TodoContainer>
     </div>
   );
