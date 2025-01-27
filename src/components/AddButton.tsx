@@ -14,6 +14,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "./ui/input";
 
 const AddButton = () => {
+
+  function handleInput(event) {
+    setNewTask(event.target.value);
+  }
+
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -28,7 +33,7 @@ const AddButton = () => {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Add your new to-do item</AlertDialogTitle>
-          <Input />
+          <Input onChange={() => handleInput()}/>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel className="w-1/6 self-center bg-red-500 text-white cursor-pointer hover:bg-red-700 hover:text-white">

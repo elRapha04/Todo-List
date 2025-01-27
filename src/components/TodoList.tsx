@@ -8,11 +8,14 @@ const TodoList = () => {
   const [tasks, setTasks] = useState(["task 1", "task 2", "task 3"]);
   const [newTask, setNewTask] = useState("");
 
-  function handleInput(event) {}
+  
 
   function addTask() {}
 
-  function deleteTask(index) {}
+  function deleteTask(index) {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  }
 
   function moveUp(index) {
 
