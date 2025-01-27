@@ -1,11 +1,17 @@
-import * as React from "react"
+import * as React from "react";
+import { useState } from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
   ({ className, type, ...props }, ref) => {
+    const [newTask, setNewTask] = useState("");
+
+    
+
     return (
       <input
+        onChange={handleInput}
         type={type}
         placeholder="Enter your task"
         className={cn(
@@ -16,9 +22,9 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
         ref={ref}
         {...props}
       />
-    )
+    );
   }
-)
-Input.displayName = "Input"
+);
+Input.displayName = "Input";
 
-export { Input }
+export { Input };

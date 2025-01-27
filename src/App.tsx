@@ -13,8 +13,6 @@ const App = () => {
 
       <TodoContainer>
         <TodoList></TodoList>
-
-        <AddButton></AddButton>
       </TodoContainer>
     </div>
   );

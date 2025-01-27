@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -14,9 +15,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "./ui/input";
 
 const AddButton = () => {
+  const [tasks, setTasks] = useState(["task 1", "task 2", "task 3"]);
+  const [newTask, setNewTask] = useState("");
 
-  function handleInput(event) {
-    setNewTask(event.target.value);
+  function addTask() {
+    setTasks((t) => [...t, newTask]);
+    setNewTask("");
   }
 
   return (
@@ -33,13 +37,13 @@ const AddButton = () => {
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Add your new to-do item</AlertDialogTitle>
-          <Input onChange={() => handleInput()}/>
+          <Input />
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel className="w-1/6 self-center bg-red-500 text-white cursor-pointer hover:bg-red-700 hover:text-white">
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction className="w-1/6 self-center bg-green-500 text-black cursor-pointer hover:bg-green-700">
+          <AlertDialogAction onClick={addTask} className="w-1/6 self-center bg-green-500 text-black cursor-pointer hover:bg-green-700">
             Add
           </AlertDialogAction>
         </AlertDialogFooter>
