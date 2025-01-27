@@ -35,7 +35,14 @@ const TodoList = () => {
     setTasks(updatedTasks);
   }
 
-  function editTask(index) {}
+  function editTask(index) {
+    const updatedTask = prompt("Edit task:", tasks[index]);
+    if (updatedTask !== null && updatedTask.trim() !== "") {
+      const updatedTasks = [...tasks];
+      updatedTasks[index] = updatedTask;
+      setTasks(updatedTasks);
+    }
+  }
 
   function moveUp(index) {
     if (index > 0) {
@@ -71,7 +78,7 @@ const TodoList = () => {
           onChange={handleInput}
         />
         <Button
-          className="bg-green-500/50 backdrop-blur-sm hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100"
+          className="bg-green-500/30 backdrop-blur-sm hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100"
           onClick={addTask}
         >
           Add
