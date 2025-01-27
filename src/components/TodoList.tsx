@@ -33,10 +33,8 @@ const TodoList = () => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
-  
-  function editTask(index) {
-    
-  }
+
+  function editTask(index) {}
 
   function moveUp(index) {
     if (index > 0) {
@@ -68,6 +66,7 @@ const TodoList = () => {
           type="text"
           placeholder="Enter task"
           value={newTask}
+          maxLength={50}
           onChange={handleInput}
         />
         <Button
@@ -87,7 +86,7 @@ const TodoList = () => {
             >
               <Checkbox className="cursor-pointer hover:bg-black/10 active:bg-white" />
 
-              <span className="flex overflow-hidden ">{task}</span>
+              <span className="flex overflow-scroll custom-scrollbar text-black w-9/10">{task}</span>
 
               <span className="grid grid-cols-[1fr_1fr]">
                 <MdDeleteOutline
