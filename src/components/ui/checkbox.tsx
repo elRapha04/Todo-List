@@ -17,12 +17,17 @@ const Checkbox = React.forwardRef<
     {...props}
   >
     <CheckboxPrimitive.Indicator
+      onChange={(e) => {
+        if (e.target.checked) {
+          setTimeout(() => deleteTask(index), 500);
+        }
+      }}
       className={cn("flex items-center justify-center text-current")}
     >
       <Check className="h-4 w-4" />
     </CheckboxPrimitive.Indicator>
   </CheckboxPrimitive.Root>
-))
+));
 Checkbox.displayName = CheckboxPrimitive.Root.displayName
 
 export { Checkbox }

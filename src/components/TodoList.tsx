@@ -92,7 +92,10 @@ const TodoList = () => {
               key={index}
               className="w-full h-1/5 backdrop-blur-xs border-2 border-lime-400 rounded-2xl p-2 grid items-center grid-cols-[10%_1fr_64px] text-nowrap"
             >
-              <Checkbox className="cursor-pointer hover:bg-black/10 active:bg-white" />
+              <Checkbox
+                onClick={() => deleteTask(index)}
+                className="cursor-pointer hover:bg-black/10 active:bg-white"
+              />
 
               <span className="flex overflow-scroll custom-scrollbar text-black text-2xl font-bold font-mono w-9/10">
                 {task}
