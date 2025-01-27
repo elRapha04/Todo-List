@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/todo-list",
+  base: "/todo-list/",
   plugins: [react()],
   resolve: {
     alias: {
