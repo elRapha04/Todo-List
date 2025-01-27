@@ -16,12 +16,15 @@ const App = () => {
       <TodoContainer>
         <TodoList></TodoList>
       </TodoContainer>
-      <p className="text-2xl text-white italic">
-        The checkbox for the "Mark as Done" feature isn't behaving as intended.
-      </p>
-      <p className="text-2xl text-white italic">
-        Editing is performed through a window prompt.
-      </p>
+      <div className="bottom-0 opacity-50 xs:flex sm:grid items-center sm:grid-cols-[1fr_1fr] gap-8 w-4/5 md:w-3/4 lg:w-3/5 xl:w-2/5">
+        <p className="border-2 rounded-2xl sm:p-4 text-center text-xs text-white italic transition-all duration-500">
+          The checkbox for the "Mark as Done" feature isn't behaving as
+          intended.
+        </p>
+        <p className="border-2 rounded-2xl sm:p-4 text-center text-xs text-white italic transition-all duration-500">
+          Editing is performed through a window prompt.
+        </p>
+      </div>
     </div>
   );
 };

@@ -94,7 +94,7 @@ const TodoList = () => {
             >
               <Checkbox
                 onClick={() => deleteTask(index)}
-                className="cursor-pointer hover:bg-black/10 active:bg-white"
+                className="cursor-pointer hover:bg-black/10 active:bg-white transition-all duration-500"
               />
 
               <span className="flex overflow-scroll custom-scrollbar text-black text-2xl font-bold font-mono w-9/10">
@@ -104,19 +104,19 @@ const TodoList = () => {
               <span className="grid grid-cols-[1fr_1fr]">
                 <MdDeleteOutline
                   onClick={() => deleteTask(index)}
-                  className="size-8 cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white rounded-tl-xl"
+                  className="size-8 cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white rounded-tl-xl transition-all duration-500"
                 />
                 <FiEdit
                   onClick={() => editTask(index)}
-                  className="size-8 cursor-pointer bg-yellow-500 text-black hover:bg-yellow-700 hover:text-white active:text-red-700 active:bg-white rounded-tr-xl"
+                  className="size-8 cursor-pointer bg-yellow-500 text-black hover:bg-yellow-700 hover:text-white active:text-red-700 active:bg-white rounded-tr-xl transition-all duration-500"
                 />
                 <CiCircleChevUp
                   onClick={() => moveUp(index)}
-                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-bl-xl"
+                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-bl-xl transition-all duration-500"
                 />
                 <CiCircleChevDown
                   onClick={() => moveDown(index)}
-                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-br-xl"
+                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-br-xl transition-all duration-500"
                 />
               </span>
             </li>
