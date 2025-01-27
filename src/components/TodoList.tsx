@@ -68,7 +68,7 @@ const TodoList = () => {
 
   return (
     <div className="w-full">
-      <div className="top-0 w-full grid grid-cols-[1fr_25%] mb-8">
+      <div className="sticky z-10 shadow-[10px_10px_10px_rgb(0, 0, 0)] top-0 w-full grid grid-cols-[1fr_25%] mb-8">
         <input
           className="bg-transparent text-xl backdrop-blur-sm rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
           type="text"
@@ -76,10 +76,12 @@ const TodoList = () => {
           value={newTask}
           maxLength={50}
           onChange={handleInput}
+          title="Enter Task"
         />
         <Button
           className="bg-green-400/50 backdrop-blur-sm hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100 active:scale-95"
           onClick={addTask}
+          title="Add Task"
         >
           Add
         </Button>
@@ -94,6 +96,7 @@ const TodoList = () => {
             >
               <Checkbox
                 onClick={() => deleteTask(index)}
+                title="Mark as done"
                 className="cursor-pointer hover:bg-black/10 active:bg-white transition-all duration-500"
               />
 
@@ -104,19 +107,23 @@ const TodoList = () => {
               <span className="grid grid-cols-[1fr_1fr]">
                 <MdDeleteOutline
                   onClick={() => deleteTask(index)}
-                  className="size-8 cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white rounded-tl-xl transition-all duration-500"
+                  title="Delete Task"
+                  className="size-8 cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white rounded-tl-xl transition-all duration-500 border-t-2 border-l-2 border-b-2 border-black"
                 />
                 <FiEdit
                   onClick={() => editTask(index)}
-                  className="size-8 cursor-pointer bg-yellow-500 text-black hover:bg-yellow-700 hover:text-white active:text-red-700 active:bg-white rounded-tr-xl transition-all duration-500"
+                  title="Edit Task"
+                  className="size-8 cursor-pointer bg-yellow-500 text-black hover:bg-yellow-700 hover:text-white active:text-red-700 active:bg-white rounded-tr-xl transition-all duration-500 border-2 border-black"
                 />
                 <CiCircleChevUp
                   onClick={() => moveUp(index)}
-                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-bl-xl transition-all duration-500"
+                  title="Move Task Up"
+                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-bl-xl transition-all duration-500 border-b-2 border-l-2 border-black"
                 />
                 <CiCircleChevDown
                   onClick={() => moveDown(index)}
-                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-br-xl transition-all duration-500"
+                  title="Move Task Down"
+                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-br-xl transition-all duration-500 border-b-2 border-r-2 border-black"
                 />
               </span>
             </li>
