@@ -11,6 +11,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { Input } from "./ui/input";
 
 const AddButton = () => {
   return (
@@ -26,15 +27,16 @@ const AddButton = () => {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-          <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
-          </AlertDialogDescription>
+          <AlertDialogTitle>Add your new to-do item</AlertDialogTitle>
+          <Input />
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogCancel className="w-1/6 self-center bg-red-500 text-white cursor-pointer hover:bg-red-700 hover:text-white">
+            Cancel
+          </AlertDialogCancel>
+          <AlertDialogAction className="w-1/6 self-center bg-green-500 text-black cursor-pointer hover:bg-green-700">
+            Add
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
