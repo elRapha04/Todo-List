@@ -6,7 +6,7 @@ import { CiCircleChevUp } from "react-icons/ci";
 import { CiCircleChevDown } from "react-icons/ci";
 
 const TodoList = () => {
-  const [tasks, setTasks] = useState(["task 1", "task 2", "task 3"]);
+  const [tasks, setTasks] = useState(["task 1", "task 2", "task 3", "DESIGN START"]);
   const [newTask, setNewTask] = useState("");
 
   function handleInput(event) {
