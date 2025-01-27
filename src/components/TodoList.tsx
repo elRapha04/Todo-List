@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 import { Button } from "./ui/button";
 import { MdDeleteOutline } from "react-icons/md";
@@ -19,7 +19,7 @@ const TodoList = () => {
   ]);
   const [newTask, setNewTask] = useState("");
 
-  function handleInput(event) {
+  function handleInput(event: React.ChangeEvent<HTMLInputElement>) {
     setNewTask(event.target.value);
   }
 
@@ -30,12 +30,12 @@ const TodoList = () => {
     }
   }
 
-  function deleteTask(index) {
+  function deleteTask(index: number) {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
   }
 
-  function editTask(index) {
+  function editTask(index: number) {
     const updatedTask = prompt("Edit task:", tasks[index]);
     if (updatedTask !== null && updatedTask.trim() !== "") {
       const updatedTasks = [...tasks];
@@ -44,7 +44,7 @@ const TodoList = () => {
     }
   }
 
-  function moveUp(index) {
+  function moveUp(index: number) {
     if (index > 0) {
       const updatedTasks = [...tasks];
       [updatedTasks[index], updatedTasks[index - 1]] = [
@@ -55,7 +55,7 @@ const TodoList = () => {
     }
   }
 
-  function moveDown(index) {
+  function moveDown(index: number) {
     if (index < tasks.length - 1) {
       const updatedTasks = [...tasks];
       [updatedTasks[index], updatedTasks[index + 1]] = [

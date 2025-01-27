@@ -1,7 +1,4 @@
-import React from "react";
-import TodoContainer from "./components/ToDoContainer";
-import TodoItem from "./components/TodoItem";
-import AddButton from "./components/AddButton";
+import TodoContainer from "./components/TodoContainer";
 import TodoList from "./components/TodoList";
 import MouseAnim from "./components/ui/MouseAnim";
 
