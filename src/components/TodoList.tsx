@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Checkbox } from "./ui/checkbox";
 import { MdDeleteOutline } from "react-icons/md";
+import { CiCircleChevUp } from "react-icons/ci";
+import { CiCircleChevDown } from "react-icons/ci";
 
 const TodoList = () => {
   const [tasks, setTasks] = useState(["task 1", "task 2", "task 3"]);
@@ -12,9 +14,25 @@ const TodoList = () => {
 
   function deleteTask(index) {}
 
-  function moveUp(index) {}
+  function moveUp(index) {
 
-  function moveDown(index) {}
+    if (index > 0){
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index - 1]] = 
+      [updatedTasks[index - 1], updatedTasks[index]];
+      setTasks(updatedTasks);
+    }
+  }
+
+  function moveDown(index) {
+
+    if (index < tasks.length - 1) {
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index + 1]] = 
+      [updatedTasks[index + 1], updatedTasks[index]];
+      setTasks(updatedTasks);
+    }
+  }
 
   return (
     <div className="w-full">
@@ -26,7 +44,9 @@ const TodoList = () => {
           >
             <Checkbox className="cursor-pointer hover:bg-black/10 active:bg-white" />
             <span>{task}</span>
-            <MdDeleteOutline className="size-6 rounded-sm cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white" />
+            <MdDeleteOutline onClick={() => deleteTask(index)} className="size-6 rounded-sm cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white" />
+            <CiCircleChevUp onClick={() => moveUp(index)} className="size-6 rounded-sm cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white"/>
+            <CiCircleChevDown onClick={() => moveDown(index)} className="size-6 rounded-sm cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white"/>
           </li>
         ))}
       </ol>
