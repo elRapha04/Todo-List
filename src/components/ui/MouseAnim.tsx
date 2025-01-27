@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const MouseFollower = () => {
   // State to store the mouse position
@@ -35,7 +35,6 @@ const MouseFollower = () => {
         height: "10px",
         backgroundColor: "white",
         borderRadius: "50%",
-        animation: "trail 1s ease-out infinite",
       }}
     ></div>
   );
