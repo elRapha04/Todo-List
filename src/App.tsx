@@ -1,9 +1,6 @@
 import React from "react";
-import { Button } from "./components/ui/button";
 import TodoContainer from "./components/ToDoContainer";
 import TodoItem from "./components/TodoItem";
-import { Popover } from "./components/ui/popover";
-import { AlertDialog } from "./components/ui/alert-dialog";
 import AddButton from "./components/AddButton";
 
 const App = () => {
