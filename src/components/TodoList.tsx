@@ -68,9 +68,9 @@ const TodoList = () => {
 
   return (
     <div className="w-full">
-      <div className="sticky z-10 shadow-[10px_10px_10px_rgb(0, 0, 0)] top-0 w-full grid grid-cols-[1fr_25%] mb-8">
+      <div className="sticky z-10 shadow-[10px_10px_10px_rgb(0, 0, 0)] top-0 w-full grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_25%] mb-8">
         <input
-          className="bg-transparent text-xl backdrop-blur-sm rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
+          className="bg-transparent text-lg sm:text-xl backdrop-blur-sm rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
           type="text"
           placeholder="Enter task"
           value={newTask}
@@ -92,15 +92,15 @@ const TodoList = () => {
           {tasks.map((task, index) => (
             <li
               key={index}
-              className="w-full h-1/5 backdrop-blur-xs border-2 border-lime-400 rounded-2xl p-2 grid items-center grid-cols-[10%_1fr_64px] text-nowrap"
+              className="w-full h-1/5 backdrop-blur-xs border-2 border-black/50 rounded-2xl p-2 grid items-center grid-cols-[10%_1fr_64px] text-nowrap"
             >
               <Checkbox
                 onClick={() => deleteTask(index)}
                 title="Mark as done"
-                className="cursor-pointer hover:bg-black/10 active:bg-white transition-all duration-500"
+                className="justify-self-center cursor-pointer hover:bg-black/50 hover:border-1 hover:border-white active:bg-white transition-all duration-300"
               />
 
-              <span className="flex overflow-scroll custom-scrollbar text-black text-2xl font-bold font-mono w-9/10">
+              <span className="flex overflow-scroll sm:pl-4 custom-scrollbar text-black text-lg sm:text-2xl font-bold font-mono w-9/10">
                 {task}
               </span>
 
@@ -108,22 +108,22 @@ const TodoList = () => {
                 <MdDeleteOutline
                   onClick={() => deleteTask(index)}
                   title="Delete Task"
-                  className="size-8 cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white rounded-tl-xl transition-all duration-500 border-t-2 border-l-2 border-b-2 border-black"
+                  className="size-8 cursor-pointer bg-red-500 text-black hover:bg-red-700 hover:text-white active:text-red-700 active:bg-white rounded-tl-xl transition-all duration-300 border-t-2 border-l-2 border-b-2 border-black"
                 />
                 <FiEdit
                   onClick={() => editTask(index)}
                   title="Edit Task"
-                  className="size-8 cursor-pointer bg-yellow-500 text-black hover:bg-yellow-700 hover:text-white active:text-red-700 active:bg-white rounded-tr-xl transition-all duration-500 border-2 border-black"
+                  className="size-8 cursor-pointer bg-yellow-500 text-black hover:bg-yellow-700 hover:text-white active:text-red-700 active:bg-white rounded-tr-xl transition-all duration-300 border-2 border-black"
                 />
                 <CiCircleChevUp
                   onClick={() => moveUp(index)}
                   title="Move Task Up"
-                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-bl-xl transition-all duration-500 border-b-2 border-l-2 border-black"
+                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-blue-700 active:bg-white rounded-bl-xl transition-all duration-300 border-b-2 border-l-2 border-black"
                 />
                 <CiCircleChevDown
                   onClick={() => moveDown(index)}
                   title="Move Task Down"
-                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-red-700 active:bg-white rounded-br-xl transition-all duration-500 border-b-2 border-r-2 border-black"
+                  className="size-8 cursor-pointer bg-blue-500 text-black hover:bg-blue-700 hover:text-white active:text-blue-700 active:bg-white rounded-br-xl transition-all duration-300 border-b-2 border-r-2 border-black"
                 />
               </span>
             </li>
