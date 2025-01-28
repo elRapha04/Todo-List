@@ -67,10 +67,10 @@ const TodoList = () => {
   }
 
   return (
-    <div className="w-full">
-      <div className="sticky backdrop-blur-xs rounded-md z-10 shadow-[10px_10px_10px_rgb(0, 0, 0)] top-0 w-full grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_25%] mb-8">
+    <div className="w-9/10">
+      <div className="sticky backdrop-blur-xs rounded-md z-10 top-0 w-full grid grid-cols-[3fr_1fr] mb-8">
         <input
-          className="bg-transparent text-lg sm:text-xl rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
+          className="bg-transparent drop-shadow-[0_10px_10px_rgba(0,0,0,0.8)] text-lg sm:text-xl rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
           type="text"
           placeholder="Enter task"
           value={newTask}
@@ -100,7 +100,7 @@ const TodoList = () => {
                 className="justify-self-center cursor-pointer hover:bg-black/50 hover:border-1 hover:border-white active:bg-white transition-all duration-300"
               />
 
-              <span className="flex overflow-scroll sm:pl-4 custom-scrollbar text-black text-lg sm:text-2xl font-bold font-mono w-9/10">
+              <span className="flex drop-shadow-[0_0px_2px_rgba(255,255,255,0.8)] overflow-scroll sm:pl-4 custom-scrollbar text-black text-lg sm:text-2xl font-mono w-9/10">
                 {task}
               </span>
 
