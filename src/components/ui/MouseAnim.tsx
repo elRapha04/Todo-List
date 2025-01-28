@@ -1,35 +1,22 @@
-import { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const MouseFollower = () => {
-  const followerRef = useRef<HTMLDivElement>(null);
+  // State to store the mouse position
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
+  // Update position on mouse move
   useEffect(() => {
-    let mouseX = 0;
-    let mouseY = 0;
-    let followerX = 0;
-    let followerY = 0;
-    const speed = 0.1; // Adjust for smoother or snappier animation
-
     const handleMouseMove = (event: MouseEvent) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+      setPosition({
+        x: event.clientX,
+        y: event.clientY,
+      });
     };
 
-    const animateFollower = () => {
-      followerX += (mouseX - followerX) * speed;
-      followerY += (mouseY - followerY) * speed;
-
-      if (followerRef.current) {
-        followerRef.current.style.transform = `translate(${followerX}px, ${followerY}px)`;
-      }
-
-      requestAnimationFrame(animateFollower);
-    };
-
+    // Add event listener for mouse move
     window.addEventListener("mousemove", handleMouseMove);
-    animateFollower(); // Start the animation loop
 
-    // Cleanup
+    // Cleanup the event listener
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -37,15 +24,17 @@ const MouseFollower = () => {
 
   return (
     <div
-      ref={followerRef}
       style={{
         position: "absolute",
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        transition: "all 0.1s ease",
+        transform: "translate(-50%, -50%)",
+        pointerEvents: "none", // Prevent interaction with the element
         width: "10px",
         height: "10px",
         backgroundColor: "white",
         borderRadius: "50%",
-        pointerEvents: "none", // Prevent interaction
-        transform: "translate(-50%, -50%)", // Center the follower
       }}
     ></div>
   );
