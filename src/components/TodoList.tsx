@@ -68,9 +68,9 @@ const TodoList = () => {
 
   return (
     <div className="w-full">
-      <div className="sticky z-10 shadow-[10px_10px_10px_rgb(0, 0, 0)] top-0 w-full grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_25%] mb-8">
+      <div className="sticky backdrop-blur-xs rounded-md z-10 shadow-[10px_10px_10px_rgb(0, 0, 0)] top-0 w-full grid grid-cols-[1fr_100px] sm:grid-cols-[1fr_25%] mb-8">
         <input
-          className="bg-transparent text-lg sm:text-xl backdrop-blur-sm rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
+          className="bg-transparent text-lg sm:text-xl rounded-tl-md rounded-bl-md px-4 text-black active:scale-95 transition-all duration-100 font-mono"
           type="text"
           placeholder="Enter task"
           value={newTask}
@@ -79,7 +79,7 @@ const TodoList = () => {
           title="Enter Task"
         />
         <Button
-          className="bg-green-400/50 backdrop-blur-sm hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100 active:scale-95"
+          className="bg-green-400/50 hover:bg-green-600/60 text-black text-xl hover:scale-105 hover:text-white cursor-pointer rounded-tl-none rounded-bl-none rounded-tr-md rounded-br-md transition-all duration-100 active:scale-95"
           onClick={addTask}
           title="Add Task"
         >
